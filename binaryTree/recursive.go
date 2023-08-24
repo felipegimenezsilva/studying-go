@@ -30,3 +30,12 @@ func PrintOrderRecursive(root *NodeBinaryTree) {
 		PrintOrderRecursive((*root).left)
 	}
 }
+
+func PrintTreeOrderRecursive(root *NodeBinaryTree) {
+	if root != nil {
+		fmt.Printf("(%v", (*root).value)
+		PrintTreeOrderRecursive((*root).right)
+		PrintTreeOrderRecursive((*root).left)
+		fmt.Printf(")")
+	}
+}

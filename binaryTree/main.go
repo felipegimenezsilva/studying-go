@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type NodeBinaryTree struct {
 	value int
 	left  *NodeBinaryTree
@@ -23,7 +25,7 @@ func main() {
 
 	var root *NodeBinaryTree = nil
 
-	root = InsertNodeRecursive(root, CreateLeaf(7))
+	root = InsertNodeRecursive(root, CreateLeaf(5))
 	root = InsertNodeRecursive(root, CreateLeaf(8))
 	root = InsertNodeRecursive(root, CreateLeaf(1))
 	root = InsertNodeRecursive(root, CreateLeaf(8))
@@ -37,5 +39,7 @@ func main() {
 	root = InsertNodeRecursive(root, CreateLeaf(0))
 
 	PrintOrderRecursive(root)
+	fmt.Printf("\n")
+	PrintTreeOrderRecursive(root)
 
 }
