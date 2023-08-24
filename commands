@@ -1,0 +1,7 @@
+# to create a new module
+go mod init <mod_name>
+
+# to run file/folder :
+go run file.go <otherRequiredFiles.go>
+# or go run <folder>
+go run .
