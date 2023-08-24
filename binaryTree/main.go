@@ -8,25 +8,6 @@ type NodeBinaryTree struct {
 	right *NodeBinaryTree
 }
 
-func InsertNodeRecursive(root *NodeBinaryTree, node *NodeBinaryTree) *NodeBinaryTree {
-	if root == nil {
-		return node
-	} else if root.value > node.value {
-		if (*root).right != nil {
-			InsertNodeRecursive((*root).right, node)
-		} else {
-			(*root).right = node
-		}
-	} else {
-		if (*root).left != nil {
-			InsertNodeRecursive((*root).left, node)
-		} else {
-			(*root).left = node
-		}
-	}
-	return root
-}
-
 // Return Pointers of Local Variables Is Safe in Go:
 // Unlike C language, Go is a language supporting garbage collection,
 // so return the address of a local variable is absolutely safe in Go.
@@ -44,9 +25,21 @@ func main() {
 
 	var root *NodeBinaryTree = nil
 
-	root = InsertNodeRecursive(root, CreateLeaf(7))
+	root = InsertNodeRecursive(root, CreateLeaf(5))
 	root = InsertNodeRecursive(root, CreateLeaf(8))
+	root = InsertNodeRecursive(root, CreateLeaf(1))
+	root = InsertNodeRecursive(root, CreateLeaf(8))
+	root = InsertNodeRecursive(root, CreateLeaf(4))
+	root = InsertNodeRecursive(root, CreateLeaf(7))
+	root = InsertNodeRecursive(root, CreateLeaf(6))
+	root = InsertNodeRecursive(root, CreateLeaf(9))
+	root = InsertNodeRecursive(root, CreateLeaf(10))
+	root = InsertNodeRecursive(root, CreateLeaf(2))
+	root = InsertNodeRecursive(root, CreateLeaf(3))
+	root = InsertNodeRecursive(root, CreateLeaf(0))
 
-	fmt.Printf("%v", *root)
+	PrintOrderRecursive(root)
+	fmt.Printf("\n")
+	PrintTreeOrderRecursive(root)
 
 }
